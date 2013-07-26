@@ -1,0 +1,17 @@
+<license-lookup xmlns="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://source.jasig.org/schemas/maven-notice-plugin/license-lookup https://source.jasig.org/schemas/maven-notice-plugin/license-lookup/license-lookup-v1.0.xsd">
+	<artifact>
+		<groupId>org.codehaus.jettison</groupId>
+		<artifactId>jettison</artifactId>
+		<license>Apache License, Version 2.0</license>
+	</artifact>
+	<artifact>
+		<groupId>org.xerial.snappy</groupId>
+		<artifactId>snappy-java</artifactId>
+		<license>Apache Software License, Version 2.0</license>
+	</artifact>
+	<artifact>
+		<groupId>javax.xml.bind</groupId>
+		<artifactId>jsr173_api</artifactId>
+		<license>CDDL</license>
+	</artifact>
+</license-lookup>
