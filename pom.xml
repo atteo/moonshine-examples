@@ -14,5 +14,6 @@
 		<module>05_injecting_into_test</module>
 		<module>06_custom_startup</module>
 		<module>07_installation_package</module>
+		<module>08_external_container</module>
 	</modules>
 </project>
