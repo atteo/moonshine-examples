@@ -18,7 +18,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.atteo.moonshine</groupId>
-			<artifactId>core</artifactId>
+			<artifactId>container</artifactId>
 		</dependency>
 	</dependencies>
 	<build>

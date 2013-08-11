@@ -15,16 +15,19 @@ package org.atteo.moonshine.example;
 
 import java.io.IOException;
 
-import org.atteo.evo.config.IncorrectConfigurationException;
 import org.atteo.moonshine.Moonshine;
+import org.atteo.moonshine.MoonshineException;
 
 public class Main {
-	public static void main(String[] args) throws IOException, IncorrectConfigurationException {
+	public static void main(String[] args) throws IOException, MoonshineException {
 		Moonshine moonshine = Moonshine.Factory.builder()
+				.applicationName("app")
 				.arguments(args)
 				.addPropertyResolver(new DatePropertyResolver())
 				.build();
 
-		moonshine.start();
+		if (moonshine != null) {
+			moonshine.start();
+		}
 	}
 }
