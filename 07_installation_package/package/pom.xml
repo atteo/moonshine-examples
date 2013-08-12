@@ -44,7 +44,7 @@
 						</goals>
 						<configuration>
 							<licenseMapping>
-								<param>https://source.jasig.org/licenses/license-mappings.xml</param>
+								<param>jasig-license-mappings.xml</param>
 								<param>license-mappings.xml</param>
 							</licenseMapping>
 							<outputDir>${project.build.outputDirectory}</outputDir>
