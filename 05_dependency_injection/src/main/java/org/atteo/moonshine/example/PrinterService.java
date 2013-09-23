@@ -13,22 +13,29 @@
  */
 package org.atteo.moonshine.example;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.inject.Inject;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlIDREF;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.atteo.evo.config.XmlDefaultValue;
 import org.atteo.moonshine.TopLevelService;
+import org.atteo.moonshine.services.ImportService;
 
 /**
- * Service which produces message.
+ * Service which prints message.
  */
-@XmlRootElement(name = "provider")
-public class MessageProviderService extends TopLevelService {
-	@XmlElement
-	@XmlDefaultValue("Hello World!")
-	private String message;
+@XmlRootElement(name = "printer")
+public class PrinterService extends TopLevelService {
+	@ImportService
+	@XmlIDREF
+	@XmlAttribute
+	private MessageProviderService provider;
 
-	public String getMessage() {
-		return message;
+	@Inject
+	private MessageProvider messageProvider;
+
+	@Override
+	public void start() {
+		System.out.println("Message is: " + messageProvider.getMessage());
 	}
 }

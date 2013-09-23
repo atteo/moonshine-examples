@@ -13,21 +13,26 @@
  */
 package org.atteo.moonshine.example;
 
-import javax.inject.Inject;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.atteo.moonshine.services.TopLevelService;
+import org.atteo.moonshine.TopLevelService;
+import org.atteo.moonshine.services.ImportService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Service which prints message.
  */
 @XmlRootElement(name = "printer")
 public class PrinterService extends TopLevelService {
-	@Inject
-	private MessageProvider messageProvider;
+	private static final Logger logger = LoggerFactory.getLogger(PrinterService.class);
+
+	@ImportService
+	private MessageProviderService messageProvider;
 
 	@Override
 	public void start() {
-		System.out.println("Message is: " + messageProvider.getMessage());
+		logger.warn("Message is: " + messageProvider.getMessage());
 	}
 }
+

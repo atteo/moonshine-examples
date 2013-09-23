@@ -10,10 +10,10 @@
 		<module>01_simple_service</module>
 		<module>02_testing</module>
 		<module>03_dependent_services</module>
-		<module>04_import_bindings</module>
-		<module>05_injecting_into_test</module>
-		<module>06_custom_startup</module>
-		<module>07_installation_package</module>
-		<module>08_external_container</module>
+		<module>04_robot_legs_problem</module>
+		<module>05_dependency_injection</module>
+		<module>06_injecting_into_test_class</module>
+		<module>07_custom_startup</module>
+		<module>08_installation_package</module>
 	</modules>
 </project>

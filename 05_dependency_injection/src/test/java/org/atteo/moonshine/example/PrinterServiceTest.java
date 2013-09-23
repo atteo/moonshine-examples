@@ -13,22 +13,23 @@
  */
 package org.atteo.moonshine.example;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import org.atteo.moonshine.tests.MoonshineConfiguration;
+import org.atteo.moonshine.tests.MoonshineTest;
+import org.junit.Test;
 
-import org.atteo.evo.config.XmlDefaultValue;
-import org.atteo.moonshine.TopLevelService;
-
-/**
- * Service which produces message.
- */
-@XmlRootElement(name = "provider")
-public class MessageProviderService extends TopLevelService {
-	@XmlElement
-	@XmlDefaultValue("Hello World!")
-	private String message;
-
-	public String getMessage() {
-		return message;
+@MoonshineConfiguration(fromString = ""
+		+ "<config>"
+		+ "    <provider id='first'>"
+		+ "        <message>First message</message>"
+		+ "    </provider>"
+		+ "    <provider id='second'>"
+		+ "        <message>Second message</message>"
+		+ "    </provider>"
+		+ "    <printer provider='first'/>"
+		+ "    <printer provider='second'/>"
+		+ "</config>")
+public class PrinterServiceTest extends MoonshineTest {
+	@Test
+	public void shouldExecute() {
 	}
 }

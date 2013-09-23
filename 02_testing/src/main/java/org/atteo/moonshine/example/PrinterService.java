@@ -13,22 +13,26 @@
  */
 package org.atteo.moonshine.example;
 
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.atteo.evo.config.XmlDefaultValue;
 import org.atteo.moonshine.TopLevelService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * Service which produces message.
+ * Service with basic start/stop logic.
  */
-@XmlRootElement(name = "provider")
-public class MessageProviderService extends TopLevelService {
-	@XmlElement
-	@XmlDefaultValue("Hello World!")
-	private String message;
+@XmlRootElement(name = "printer")
+public class PrinterService extends TopLevelService {
+	private static final Logger logger = LoggerFactory.getLogger(PrinterService.class);
 
-	public String getMessage() {
-		return message;
+	@Override
+	public void start() {
+		logger.warn("Basic service start() method called");
+	}
+
+	@Override
+	public void stop() {
+		logger.warn("Basic service stop() method called");
 	}
 }

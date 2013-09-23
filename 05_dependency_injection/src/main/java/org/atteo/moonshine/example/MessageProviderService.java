@@ -19,6 +19,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.atteo.evo.config.XmlDefaultValue;
 import org.atteo.moonshine.TopLevelService;
 
+import com.google.inject.AbstractModule;
+import com.google.inject.Module;
+
 /**
  * Service which produces message.
  */
@@ -28,7 +31,17 @@ public class MessageProviderService extends TopLevelService {
 	@XmlDefaultValue("Hello World!")
 	private String message;
 
-	public String getMessage() {
-		return message;
+	@Override
+	public Module configure() {
+		return new AbstractModule() {
+			@Override
+			protected void configure() {
+				bind(MessageProvider.class).toInstance(new MessageProvider() {
+					public String getMessage() {
+						return message;
+					}
+				});
+			}
+		};
 	}
 }
