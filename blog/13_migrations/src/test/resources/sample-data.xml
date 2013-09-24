@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+	<changeSet id="createProject" author="sentinel">
+		<insert tableName="Post">
+			<column name="id" value="0"/>
+			<column name="title" value="Hello"/>
+			<column name="text" value="This is our first post. Welcome on our blog. We hope you will find a lot of interesting stuff here"/>
+		</insert>
+		<rollback>
+			<delete tableName="Post"/>
+		</rollback>
+	</changeSet>
+</databaseChangeLog>
