@@ -11,7 +11,7 @@
 		<dependencies>
 			<dependency>
 				<groupId>org.atteo.moonshine</groupId>
-				<artifactId>import</artifactId>
+				<artifactId>bom</artifactId>
 				<version>1.0-SNAPSHOT</version>
 				<type>pom</type>
 				<scope>import</scope>
