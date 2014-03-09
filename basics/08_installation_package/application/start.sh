@@ -46,19 +46,6 @@ while [[ "$1" != "" ]]; do
 		continue
 	fi
 
-	if [[ "$1" == "--log-method-entry" ]]; then
-		if [[ ! -r slf4j-ext-1.7.1.jar ]]; then
-			wget http://search.maven.org/remotecontent?filepath=org/slf4j/slf4j-ext/1.7.1/slf4j-ext-1.7.1.jar -O slf4j-ext-1.7.1.jar
-		fi
-		if [[ ! -r javassist.jar ]]; then
-			#wget http://search.maven.org/remotecontent?filepath=javassist/javassist/3.4.GA/javassist-3.4.GA.jar -O javassist.jar
-			wget http://search.maven.org/remotecontent?filepath=org/javassist/javassist/3.16.1-GA/javassist-3.16.1-GA.jar -O javassist.jar
-		fi
-		EXTRA="$EXTRA -javaagent:../slf4j-ext-1.7.1.jar=time,level=info,ignore=org/slf4j/:ch/qos/logback/:org/apache/log4j/:com/sun/:com/google/:org/codehaus/janino/:org/atteo/evo/jpa/:com/atteo/evo/rest:org/hibernate:org/atteo/evo/hibernate"
-		shift
-		continue
-	fi
-
 	PARAMS="$PARAMS $1"
 	shift
 done

@@ -15,12 +15,13 @@ package org.atteo.moonshine.example;
 
 import java.util.Date;
 
-import org.atteo.evo.filtering.PropertyNotFoundException;
-import org.atteo.evo.filtering.PropertyResolver;
+import org.atteo.filtering.PropertyFilter;
+import org.atteo.filtering.PropertyNotFoundException;
+import org.atteo.filtering.PropertyResolver;
 
 public class DatePropertyResolver implements PropertyResolver {
 	@Override
-	public String resolveProperty(String name, PropertyResolver resolver)
+	public String resolveProperty(String name, PropertyFilter filter)
 			throws PropertyNotFoundException {
 		if ("currentDate".equals(name)) {
 			return new Date().toString();

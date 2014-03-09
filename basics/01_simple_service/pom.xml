@@ -85,7 +85,7 @@
 						<configuration>
 							<shadedArtifactAttached>true</shadedArtifactAttached>
 							<transformers>
-								<transformer implementation="org.atteo.evo.classindex.ClassIndexTransformer"/>
+								<transformer implementation="org.atteo.classindex.ClassIndexTransformer"/>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>${mainClass}</mainClass>
 								</transformer>
@@ -111,8 +111,8 @@
 						</executions>
 						<dependencies>
 							<dependency>
-								<groupId>org.atteo</groupId>
-								<artifactId>evo-classindex-transformer</artifactId>
+								<groupId>org.atteo.classindex</groupId>
+								<artifactId>classindex-transformer</artifactId>
 								<version>2.0</version>
 							</dependency>
 						</dependencies>

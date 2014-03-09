@@ -16,7 +16,7 @@ package org.atteo.moonshine.example;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.atteo.evo.config.XmlDefaultValue;
+import org.atteo.config.XmlDefaultValue;
 import org.atteo.moonshine.TopLevelService;
 
 /**
