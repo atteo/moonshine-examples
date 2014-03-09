@@ -4,6 +4,9 @@
 	<groupId>org.atteo.moonshine.examples</groupId>
 	<artifactId>07_custom_startup</artifactId>
 	<version>1.0-SNAPSHOT</version>
+	<properties>
+		<mainClass>org.atteo.moonshine.example.Main</mainClass>
+	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
@@ -41,7 +44,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>org.atteo.moonshine.example.Main</mainClass>
+							<mainClass>${mainClass}</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -55,10 +58,14 @@
 						<id>execute-application</id>
 						<phase>integration-test</phase>
 						<goals>
-							<goal>exec</goal>
+							<goal>java</goal>
 						</goals>
 						<configuration>
-							<executable>${basedir}/start.sh</executable>
+							<mainClass>${mainClass}</mainClass>
+							<arguments>
+								<argument>--home</argument>
+								<argument>${project.build.directory}/it-home</argument>
+							</arguments>
 						</configuration>
 					</execution>
 				</executions>
