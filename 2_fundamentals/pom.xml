@@ -2,11 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.atteo.moonshine.examples</groupId>
-	<artifactId>examples</artifactId>
+	<artifactId>2_fundamentals</artifactId>
 	<version>1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>1_intro</module>
-		<module>2_fundamentals</module>
+		<module>21_simple_service</module>
+		<module>22_testing</module>
+		<module>23_dependent_services</module>
+		<module>24_dependency_injection</module>
+		<module>25_service_configuration</module>
+		<module>26_properties</module>
+		<module>27_robot_legs_problem</module>
 	</modules>
 </project>
