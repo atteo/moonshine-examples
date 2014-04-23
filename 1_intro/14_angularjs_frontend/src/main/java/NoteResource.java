@@ -23,6 +23,7 @@ public class NoteResource {
 			return manager.createQuery("select n from Note n", Note.class).getSingleResult();
 		} catch (NoResultException e) {
 			Note note = new Note();
+			note.setContent("Default message");
 			manager.persist(note);
 			return note;
 		}

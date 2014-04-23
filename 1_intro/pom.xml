@@ -11,5 +11,6 @@
 		<module>12_rest</module>
 		<module>13_hibernate</module>
 		<module>14_angularjs_frontend</module>
+		<module>15_proper_service</module>
 	</modules>
 </project>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="NoteModule">
+	<head>
+		<title>Note</title>
+		<script src="/webjars/angularjs/1.3.0-beta.4/angular.min.js"></script>
+		<script src="/webjars/angularjs/1.3.0-beta.4/angular-resource.min.js"></script>
+		<script src="NoteController.js"></script>
+	</head>
+	<body>
+		<div ng-controller="NoteController">
+			<label>Note:</label>
+			<br/>
+			<textarea id="content" ng-model="note.content" ng-change="save()" ng-focus=""
+					  style="width: 500px; height: 200px;"></textarea>
+			<br/>
+		</div>
+	</body>
+</html>

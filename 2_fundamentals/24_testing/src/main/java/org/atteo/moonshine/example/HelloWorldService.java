@@ -13,32 +13,25 @@
  */
 package org.atteo.moonshine.example;
 
-import javax.xml.bind.annotation.XmlElement;
+import javax.inject.Inject;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.atteo.config.XmlDefaultValue;
 import org.atteo.moonshine.TopLevelService;
-
-import com.google.inject.Module;
-import com.google.inject.PrivateModule;
+import org.atteo.moonshine.services.ImportService;
 
 /**
- * Service which produces message.
+ * Service which prints message.
  */
-@XmlRootElement(name = "provider")
-public class MessageProviderService extends TopLevelService {
-	@XmlElement
-	@XmlDefaultValue("Hello World, application started at ${java: new Date().toString()}")
+@XmlRootElement
+public class HelloWorldService extends TopLevelService {
+	@ImportService
+	private MessageProviderService provider;
+
+	@Inject
 	private String message;
 
 	@Override
-	public Module configure() {
-		return new PrivateModule() {
-			@Override
-			protected void configure() {
-				bind(String.class).toInstance(message);
-				expose(String.class);
-			}
-		};
+	public void start() {
+		System.out.println("Message is: " + message);
 	}
 }

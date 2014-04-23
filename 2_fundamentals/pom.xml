@@ -7,9 +7,9 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>21_simple_service</module>
-		<module>22_testing</module>
-		<module>23_dependent_services</module>
-		<module>24_dependency_injection</module>
+		<module>22_dependent_services</module>
+		<module>23_dependency_injection</module>
+		<module>24_testing</module>
 		<module>25_service_configuration</module>
 		<module>26_properties</module>
 		<module>27_robot_legs_problem</module>

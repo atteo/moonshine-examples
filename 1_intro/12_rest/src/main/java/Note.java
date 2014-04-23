@@ -7,7 +7,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import org.atteo.moonshine.jaxrs.ResourceModel;
 
 @XmlRootElement(name = "note")
-@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAccessorType(XmlAccessType.NONE)
 @ResourceModel
 public class Note {
 	@XmlElement

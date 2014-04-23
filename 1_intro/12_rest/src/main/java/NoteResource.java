@@ -8,7 +8,9 @@ import javax.ws.rs.Produces;
 @Produces("application/json")
 public class NoteResource {
 	@GET
-	public String get() {
-		return "Hello World";
+	public Note get() {
+		Note note = new Note();
+		note.setContent("Hello World!");
+		return note;
 	}
 }

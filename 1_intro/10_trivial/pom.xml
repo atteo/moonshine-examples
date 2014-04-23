@@ -7,21 +7,11 @@
 	<properties>
 		<mainClass>org.atteo.moonshine.Main</mainClass>
 	</properties>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.atteo.moonshine</groupId>
-				<artifactId>bom</artifactId>
-				<version>1-SNAPSHOT</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<dependencies>
 		<dependency>
 			<groupId>org.atteo.moonshine</groupId>
 			<artifactId>container</artifactId>
+			<version>1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 	<build>
@@ -36,7 +26,6 @@
 						<configuration>
 							<mainClass>${mainClass}</mainClass>
 							<arguments>
-								<argument>--auto-config</argument>
 								<argument>--home</argument>
 								<argument>${project.build.directory}/home</argument>
 							</arguments>
